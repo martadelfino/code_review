@@ -1,5 +1,6 @@
 # Code Review 10 April 2024. 
-This repo contains scripts to calculate Linkage Disequilibirum (LD) measures. 
+This repo contains scripts to calculate Linkage Disequilibirum (LD) measures. Info on LD:
+https://docs.google.com/presentation/d/1I6e-q22om6AiI-cYjlJ7pJ3f5w0gQTDE/edit?usp=sharing&ouid=115928088663191390220&rtpof=true&sd=true 
 
 ## Requirements
 * csv
