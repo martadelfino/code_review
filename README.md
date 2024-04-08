@@ -25,5 +25,5 @@ https://docs.google.com/presentation/d/1I6e-q22om6AiI-cYjlJ7pJ3f5w0gQTDE/edit?us
 ## Things I'd like feedback/advice on
 * structure of repo
 * setting up a PyPi package
-* any code advice - like when to use a function or a class
+* any code advice - e.g my use of functions and classes?
 * anything else :)
