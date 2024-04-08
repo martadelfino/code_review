@@ -27,4 +27,5 @@ https://docs.google.com/presentation/d/1I6e-q22om6AiI-cYjlJ7pJ3f5w0gQTDE/edit?us
 * setting up a PyPi package
 * any code advice - e.g my use of functions and classes?
 * tests?
+* poetry?
 * anything else :)
