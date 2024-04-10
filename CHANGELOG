@@ -13,3 +13,19 @@
 - Install libraries with `uv`: `uv pip install -r pyproject.toml`
 - amend library imports to explicit imports
 - amend hard-coded directories to relative directories
+
+## Commit 3
+
+- sample type hinting
+- enable Codiumate extension `codium.codium` for testing. Too much coupling
+
+### Suggestions for improvements
+
+- Improve variable naming for clarity, use descriptive names
+- use `csv.reader`
+- error handling: what happens when expected columns aren't found in the DataFrame? line 33
+- use `csvDictWriter`
+- use `collections.Counter` lines 86-97
+- use `.at` for faster access to a single value
+- use type hinting
+- use `pathlib` to pass in the output directory, to save images and other data

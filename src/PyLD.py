@@ -3,6 +3,7 @@ import pandas as pd
 
 
 def get_dict_of_genotypes(file_path):
+    column_names: list[str] = []
 
     column_names = []
 
@@ -31,7 +32,7 @@ def get_dict_of_genotypes(file_path):
     # Create a DataFrame using column names and data
     df = pd.DataFrame(data, columns=column_names)
 
-    filtered_df = df[['ID'] + [col for col in df.columns if col.startswith('HG')]]
+    filtered_df: pd.DataFrame = df[['ID'] + [col for col in df.columns if col.startswith('HG')]]
 
     result_dict = {}
 
@@ -86,7 +87,7 @@ def determine_haplotype(genotype_list_1, genotype_list_2):
     return result
     
 
-def count_haplotypes(compare_genotypes):
+def count_haplotypes(compare_genotypes) -> dict[str, int]:
     '''Function counts how many of each haplotype exist
     The 00 is PA PB alleles (so reference, reference for each rsID)
     01 is PA Pb alleles
@@ -94,13 +95,13 @@ def count_haplotypes(compare_genotypes):
     11 is Pa Pb alleles
     This is only possible because the vcf files I used had phased data.
     '''
-    count_dict = {'00': 0, '01': 0, '10': 0, '11': 0}
+    count_dict: dict[str, int] = {'00': 0, '01': 0, '10': 0, '11': 0}
     for genotype in compare_genotypes:
         count_dict[genotype] += 1
     return count_dict
     
 
-def count_PA_PB_PAB(haplotype_counts):
+def count_PA_PB_PAB(haplotype_counts) -> dict[str, int]:
     '''
     Function obtains the PA, PB, PAB allele frequencies needed for r^2 and D' calculations
     In this case, I'm dividing the frequencies by the total individuals in the population
@@ -163,10 +164,10 @@ def calculate_D_prime(D, count_dict):
 
 
 class LD:
-    def __init__(self, file_path, list_of_rsIDs):
+    def __init__(self, file_path, list_of_rsIDs) -> None:
         self.file_path = file_path
         self.list_of_rsIDs = list_of_rsIDs
-        self.results = []
+        self.results: list[dict] = []
 
     def calculate_LD_measures(self): 
         population = get_dict_of_genotypes(self.file_path)
@@ -201,7 +202,7 @@ class LD:
 
         return self.results
     
-    def save_results(self, output_file_path):
+    def save_results(self, output_file_path) -> None:
         results = self.calculate_LD_measures()
         with open(output_file_path, 'w', newline='', encoding="utf-8") as f:
             writer = csv.writer(f, delimiter='\t')

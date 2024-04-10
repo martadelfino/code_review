@@ -1,8 +1,14 @@
 # Functions for the LD heatmaps 
-
+from pathlib import Path
 import numpy as np
 import itertools
 import matplotlib.pyplot as plt
+
+
+OUTPUT_DIR: str = "assets/"  # or data
+OUTPUT_PATH: Path = Path(OUTPUT_DIR)
+# Ensure the directory exists
+OUTPUT_PATH.mkdir(exist_ok=True)
 
 
 def heatmap(values, labels, title):
@@ -97,8 +103,8 @@ def LD_heatmaps(results_pairwise_LD, rsID_list):
 
     ### R2 HEATMAP
     r2_heatmap = heatmap(r2_values, rsID_list, r2_title) 
-    plt.savefig("r2.png")
+    plt.savefig(OUTPUT_PATH / "r2.png")
 
     ### DPRIME HEATMAP
     dprime_heatmap = heatmap(dprime_values, rsID_list, dprime_title)
-    plt.savefig("dprime.png")
+    plt.savefig(OUTPUT_PATH / "dprime.png")
