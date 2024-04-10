@@ -13,6 +13,11 @@ dependencies = [
   "mypy-extensions",
   "ruff",
   "pre-commit",
+  "pandas",
+  "pandas-stubs",
+  "matplotlib",
+  "numpy",
+  "ipykernel",
 ]
 requires-python = ">=3.10"
 authors = [

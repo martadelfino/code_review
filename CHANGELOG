@@ -1,5 +1,15 @@
 # Changes to accommodate suggestions
 
+## Commit 1
+
 - copy in: https://github.qmul.ac.uk/aax010/python-project-template
 - only conflict is README, so just mix the two, rename old to `code_review.md` and stick to `docs/`
 - create environment with `uv venv` and activate
+
+## Commit 2
+
+- move things around: `assets/` for pictures, `data/` for input/output, `src/` for the scripts
+- modify lockfiles/requirements with required libraries.
+- Install libraries with `uv`: `uv pip install -r pyproject.toml`
+- amend library imports to explicit imports
+- amend hard-coded directories to relative directories

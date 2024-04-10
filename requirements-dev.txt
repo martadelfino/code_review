@@ -4,5 +4,6 @@ pytest
 coverage
 mypy
 mypy-extensions
+pandas-stubs
 ruff
 pre-commit
