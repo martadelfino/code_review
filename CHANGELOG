@@ -1,0 +1,5 @@
+# Changes to accommodate suggestions
+
+- copy in: https://github.qmul.ac.uk/aax010/python-project-template
+- only conflict is README, so just mix the two, rename old to `code_review.md` and stick to `docs/`
+- create environment with `uv venv` and activate
