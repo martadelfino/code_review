@@ -144,7 +144,7 @@ class LD(object):
         
         get_genotype = population.get
         results = []
-        for rsID_1, rsID_2 in itertools.combinations(self.list_of_rsIDs):
+        for rsID_1, rsID_2 in itertools.combinations(self.list_of_rsIDs, 2):
             # Genotypes
             genotype1 = get_genotype(population, rsID_1)
             genotype2 = get_genotype(population, rsID_2)
